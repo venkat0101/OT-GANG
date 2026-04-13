@@ -101,11 +101,11 @@ header {
 
 .nav-links {
     display: flex;
-    gap: 3rem;
+    gap: 1.5rem;
 }
 
 .nav-links a {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -119,16 +119,18 @@ header {
 /* Hero Section */
 .hero-section {
     background-color: #000;
+    padding-top: 40px; /* Reduced top padding */
+    align-items: flex-start; /* Move content higher */
 }
 
 .hero-content {
-    max-width: 900px;
+    margin-top: 10vh; /* Controlled top margin */
 }
 
 h1 {
     font-size: clamp(2rem, 8vw, 6rem);
     line-height: 1;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     font-weight: 900;
     white-space: nowrap;
     width: 100%;
