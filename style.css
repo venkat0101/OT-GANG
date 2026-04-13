@@ -208,12 +208,6 @@ h1 {
     50% { opacity: 0.8; transform: translateZ(-30px) scale(1.05); }
 }
 
-.fire-text .outline {
-    -webkit-text-stroke: 1px rgba(255, 215, 0, 0.9);
-    background: none;
-    filter: drop-shadow(0 0 10px #ff4400) translateZ(20px);
-}
-
 .outline {
     color: transparent;
     -webkit-text-stroke: 1px var(--text-color);
