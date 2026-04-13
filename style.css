@@ -71,10 +71,43 @@ ul {
     z-index: 9999;
 }
 
+/* Top Ticker (Train Animation) */
+.top-ticker {
+    background: #ff4400; /* Subtle fire accent */
+    color: #000;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2000;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.ticker-content {
+    display: flex;
+    white-space: nowrap;
+    animation: tickerTrain 20s linear infinite;
+}
+
+.ticker-content span {
+    padding-right: 50px;
+}
+
+@keyframes tickerTrain {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
 /* Header & Nav */
 header {
     position: fixed;
-    top: 0;
+    top: 35px; /* Accounting for ticker height */
     left: 0;
     width: 100%;
     height: var(--nav-height);
