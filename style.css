@@ -122,14 +122,43 @@ header {
 }
 
 .hero-content {
-    max-width: 800px;
+    max-width: 900px;
 }
 
 h1 {
-    font-size: clamp(3rem, 10vw, 7rem);
+    font-size: clamp(3rem, 10vw, 8rem);
     line-height: 0.9;
     margin-bottom: 1.5rem;
     font-weight: 900;
+}
+
+/* Fire Text Animation */
+.fire-text {
+    background: linear-gradient(0deg, #ff4500, #ff8c00, #ffd700, #ffffff);
+    background-size: 100% 400%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: fireMove 3s ease infinite, fireGlow 2s ease-in-out infinite;
+    text-shadow: 0 0 20px rgba(255, 69, 0, 0.2);
+}
+
+.fire-text .outline {
+    -webkit-text-stroke: 1px rgba(255, 215, 0, 0.5);
+    background: linear-gradient(180deg, rgba(255,255,255,0.1), transparent);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+@keyframes fireMove {
+    0% { background-position: 50% 100%; }
+    50% { background-position: 50% 0%; }
+    100% { background-position: 50% 100%; }
+}
+
+@keyframes fireGlow {
+    0%, 100% { filter: brightness(1) drop-shadow(0 0 10px rgba(255, 69, 0, 0)); }
+    50% { filter: brightness(1.2) drop-shadow(0 0 30px rgba(255, 140, 0, 0.4)); }
 }
 
 .outline {
