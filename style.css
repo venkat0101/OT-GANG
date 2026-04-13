@@ -352,36 +352,45 @@ h1 {
 /* Members Section */
 .members-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
 }
 
 .member-card {
     background: var(--gray-dark);
-    padding: 3rem;
+    padding: 1.5rem 0.5rem;
     border: 1px solid rgba(255, 255, 255, 0.05);
     text-align: center;
     transition: 0.5s var(--transition);
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .member-card:hover {
     border-color: #ff4400;
-    transform: translateY(-10px);
+    background: #111;
 }
 
 .member-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
     color: var(--text-color);
+    letter-spacing: 1px;
+    margin: 0;
 }
 
-.member-card span {
-    font-size: 0.9rem;
-    color: #ff4400;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+@media (max-width: 1024px) {
+    .members-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .members-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 /* Contact Section */
