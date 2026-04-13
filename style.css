@@ -169,7 +169,7 @@ h1 {
 }
 
 .fire-text::before {
-    content: attr(data-text);
+    content: "OpenText GANG";
     position: absolute;
     top: 10px;
     left: 0;
