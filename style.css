@@ -132,33 +132,47 @@ h1 {
     font-weight: 900;
 }
 
-/* Fire Text Animation */
+/* Fire Text Animation - Real Flame Edition */
 .fire-text {
-    background: linear-gradient(0deg, #ff4500, #ff8c00, #ffd700, #ffffff);
-    background-size: 100% 400%;
+    position: relative;
+    background: linear-gradient(to top, #ff0000 0%, #ff8000 25%, #ffff00 50%, #ffffff 100%);
+    background-size: 100% 200%;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    animation: fireMove 3s ease infinite, fireGlow 2s ease-in-out infinite;
-    text-shadow: 0 0 20px rgba(255, 69, 0, 0.2);
+    filter: url(#fire-filter) drop-shadow(0 0 10px rgba(255, 68, 0, 0.4));
+    animation: fireRise 2s ease-in-out infinite alternate;
+    z-index: 1;
+}
+
+.fire-text::before {
+    content: "Open Text Gang";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    -webkit-text-stroke: 4px rgba(255, 69, 0, 0.2);
+    filter: blur(8px);
+    animation: flicker 0.1s infinite;
+}
+
+@keyframes fireRise {
+    0% { background-position: 50% 100%; }
+    100% { background-position: 50% 0%; }
+}
+
+@keyframes flicker {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { opacity: 0.9; }
 }
 
 .fire-text .outline {
-    -webkit-text-stroke: 1px rgba(255, 215, 0, 0.5);
-    background: linear-gradient(180deg, rgba(255,255,255,0.1), transparent);
-    -webkit-background-clip: text;
-    background-clip: text;
-}
-
-@keyframes fireMove {
-    0% { background-position: 50% 100%; }
-    50% { background-position: 50% 0%; }
-    100% { background-position: 50% 100%; }
-}
-
-@keyframes fireGlow {
-    0%, 100% { filter: brightness(1) drop-shadow(0 0 10px rgba(255, 69, 0, 0)); }
-    50% { filter: brightness(1.2) drop-shadow(0 0 30px rgba(255, 140, 0, 0.4)); }
+    -webkit-text-stroke: 1px rgba(255, 215, 0, 0.8);
+    background: none;
+    filter: drop-shadow(0 0 5px #ff4400);
 }
 
 .outline {
